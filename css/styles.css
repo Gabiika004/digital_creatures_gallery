@@ -1,77 +1,187 @@
-.banner{
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-}
-.banner .slider{
-    position: absolute;
-    width: 200px;
-    height: 250px;
-    top: 10%;
-    left: calc(50% - 100px);
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
-    animation: autoRun 20s linear infinite;
-    z-index: 2;
+/* ------------------------------
+   Base settings and background
+--------------------------------*/
+body {
+  background: #0a0e1f;
 }
 
-@keyframes autoRun{
-    from{
-        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
-    }to{
-        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
-    }
+/* ------------------------------
+     3D Carousel Structure & Animation
+  --------------------------------*/
+.banner {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
 }
 
-.banner .slider .item{
-    position: absolute;
-    inset: 0 0 0 0;
-    transform: 
-        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-        translateZ(550px);
-}
-.banner .slider .item img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.banner .slider {
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  top: 10%;
+  left: calc(50% - 100px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: autoRun 20s linear infinite;
+  z-index: 2;
 }
 
+@keyframes autoRun {
+  from {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+  }
+}
+
+/* ------------------------------
+     Carousel Item Styles and Hover
+  --------------------------------*/
+.banner .slider .item {
+  position: absolute;
+  inset: 0 0 0 0;
+  transform: rotateY(
+      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+    )
+    translateZ(550px);
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #e8f5a2;
+  animation: float 3s ease-in-out infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.banner .slider .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner .slider .item:hover {
+  transform: rotateY(
+      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+    )
+    translateZ(550px) rotateZ(4deg) scale(1.03);
+  box-shadow: 0 0 20px #aac705;
+}
+
+/* ------------------------------
+     Responsive Adjustments
+  --------------------------------*/
 @media screen and (max-width: 1023px) {
-    .banner .slider{
-        width: 160px;
-        height: 200px;
-        left: calc(50% - 80px);
-    }
-    .banner .slider .item{
-        transform: 
-            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-            translateZ(300px);
-    }
+  .banner .slider {
+    width: 160px;
+    height: 200px;
+    left: calc(50% - 80px);
+  }
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(300px);
+  }
 }
+
 @media screen and (max-width: 767px) {
-    .banner .slider{
-        width: 100px;
-        height: 150px;
-        left: calc(50% - 50px);
-    }
-    .banner .slider .item{
-        transform: 
-            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-            translateZ(180px);
-    }
+  .banner .slider {
+    width: 100px;
+    height: 150px;
+    left: calc(50% - 50px);
+  }
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(180px);
+  }
 }
 
 @media screen and (max-width: 320px) {
-    .banner .slider{
-        width: 80px;
-        height: 120px;
-        left: calc(50% - 40px);
-    }
-    .banner .slider .item{
-        transform: 
-            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-            translateZ(180px);
-    }
+  .banner .slider {
+    width: 80px;
+    height: 120px;
+    left: calc(50% - 40px);
+  }
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(180px);
+  }
+}
+
+/* ------------------------------
+     Modal Window Styles
+  --------------------------------*/
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal:target {
+  display: flex;
+}
+
+.modal img {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 0 40px #aac705;
+}
+
+/* ------------------------------
+     Modal Close Button
+  --------------------------------*/
+.close {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 2.5rem;
+  color: #fff;
+  text-decoration: none;
+  z-index: 1001;
+  opacity: 0.7;
+}
+
+.close:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+  color: #fff;
+  text-decoration: none;
+  z-index: 1001;
+  opacity: 1;
+}
+
+/* ------------------------------
+     Modal Animations
+  --------------------------------*/
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
 }

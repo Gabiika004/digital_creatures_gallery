@@ -1,27 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Digital creatures 3D gallery</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <div class="banner">
-        <div class="slider" style="--quantity: 10">
-            <div class="item" style="--position: 1"><img src="imgs/CryoWyrm.png" alt="Cryo Wyrm"></div>
-            <div class="item" style="--position: 2"><img src="imgs/NeonSerpent.png" alt="Neon Serpent"></div>
-            <div class="item" style="--position: 3"><img src="imgs/PlasmaTalon.png" alt="Plasma Talon"></div>
-            <div class="item" style="--position: 4"><img src="imgs/ObsidianShade.png" alt="Obsidian Shade"></div>
-            <div class="item" style="--position: 5"><img src="imgs/QuantumDrake.png" alt="Quantum Drake"></div>
-            <div class="item" style="--position: 6"><img src="imgs/AuroraMaw.png" alt="Aurora Maw"></div>
-            <div class="item" style="--position: 7"><img src="imgs/VoltRevenant.png" alt="Volt Revenant"></div>
-            <div class="item" style="--position: 8"><img src="imgs/HexaSplice.png" alt="Hexa Splice"></div>
-            <div class="item" style="--position: 9"><img src="imgs/EclipseReaver.png" alt="Eclipse Reaver"></div>
-            <div class="item" style="--position: 10"><img src="imgs/CoreflareVex.png" alt="Coreflare Vex"></div>
+      <div class="slider" style="--quantity: 10">
+        <div class="item" style="--position: 1">
+          <a href="#modal1">
+            <img src="imgs/CryoWyrm.png" alt="Cryo Wyrm" />
+          </a>
         </div>
+
+        <div class="item" style="--position: 2">
+          <a href="#modal2">
+            <img src="imgs/NeonSerpent.png" alt="Neon Serpent" />
+          </a>
+        </div>
+
+        <div class="item" style="--position: 3">
+          <a href="#modal3">
+            <img src="imgs/PlasmaTalon.png" alt="Plasma Talon" />
+          </a>
+        </div>
+
+        <div class="item" style="--position: 4">
+          <a href="#modal4">
+            <img src="imgs/ObsidianShade.png" alt="Obsidian Shade" />
+          </a>
+        </div>
+
+        <div class="item" style="--position: 5">
+          <a href="#modal5">
+            <img src="imgs/QuantumDrake.png" alt="Quantum Drake" />
+          </a>
+        </div>
+        <div class="item" style="--position: 6">
+          <a href="#modal6">
+            <img src="imgs/AuroraMaw.png" alt="Aurora Maw" />
+          </a>
+        </div>
+        <div class="item" style="--position: 7">
+          <a href="#modal7">
+            <img src="imgs/VoltRevenant.png" alt="Volt Revenant" />
+          </a>
+        </div>
+        <div class="item" style="--position: 8">
+          <a href="#modal8">
+            <img src="imgs/HexaSplice.png" alt="Hexa Splice" />
+          </a>
+        </div>
+        <div class="item" style="--position: 9">
+          <a href="#modal9">
+            <img src="imgs/EclipseReaver.png" alt="Eclipse Reaver" />
+          </a>
+        </div>
+        <div class="item" style="--position: 10">
+          <a href="#modal10"
+            ><img src="imgs/CoreflareVex.png" alt="Coreflare Vex"
+          /></a>
+        </div>
+      </div>
     </div>
-</body>
+
+    <!-- MODAL (külön a body végén) -->
+    <div id="modal1" class="modal">
+      <a href="#" class="close">×</a>
+      <img src="imgs/CryoWyrm.png" alt="Cryo Wyrm large" />
+    </div>
+
+    <div id="modal2" class="modal">
+      <a href="#" class="close">×</a>
+      <img src="imgs/NeonSerpent.png" alt="Neon Serpent large" />
+    </div>
+
+    <div id="modal3" class="modal">
+      <a href="#" class="close">×</a>
+      <img src="imgs/PlasmaTalon.png" alt="Plasma Talon large" />
+    </div>
+
+    <div id="modal4" class="modal">
+      <a href="#" class="close">x</a>
+      <img src="imgs/ObsidianShade.png" alt="Obsidian Shade large" />
+    </div>
+
+    <div id="modal5" class="modal">
+      <a href="#" class="close">×</a>
+      "><img src="imgs/QuantumDrake.png" alt="Quantum Drake large" />
+    </div>
+
+    <div id="modal6" class="modal">
+      <a href="#" class="close">×</a>
+      <img src="imgs/AuroraMaw.png" alt="Aurora Maw large" />
+    </div>
+
+    <div id="modal7" class="modal">
+      <a href="#" class="close">×</a>
+      <img src="imgs/VoltRevenant.png" alt="Volt Revenant large" />
+    </div>
+
+    <div id="modal8" class="modal">
+      <a href="#" class="close">×</a>
+      <img src="imgs/HexaSplice.png" alt="Hexa Splice large" />
+    </div>
+
+    <div id="modal9" class="modal">
+      <a href="#" class="close">×</a>
+      <img src="imgs/EclipseReaver.png" alt="Eclipse Reaver large" />
+    </div>
+
+    <div id="modal10" class="modal">
+      <a href="#" class="close">×</a>
+      <img src="imgs/CoreflareVex.png" alt="Coreflare Vex large" />
+    </div>
+  </body>
 </html>
