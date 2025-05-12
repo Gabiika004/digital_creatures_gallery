@@ -20,7 +20,7 @@ body {
   position: absolute;
   width: 200px;
   height: 250px;
-  top: 10%;
+  top: 20%;
   left: calc(50% - 100px);
   transform-style: preserve-3d;
   transform: perspective(1000px);
@@ -72,6 +72,7 @@ body {
   .banner .slider {
     width: 160px;
     height: 200px;
+    top: 30%;
     left: calc(50% - 80px);
   }
   .banner .slider .item {
@@ -86,6 +87,7 @@ body {
   .banner .slider {
     width: 100px;
     height: 150px;
+    top: 40%;
     left: calc(50% - 50px);
   }
   .banner .slider .item {
